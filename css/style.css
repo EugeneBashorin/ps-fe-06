@@ -213,6 +213,11 @@ header{
     background-color: var(--accent-text-color);
 
     border-radius: 4px;
+    border-color: transparent;
+}
+.order-button:hover,
+.order-button:focus {
+  background-color: #1976d2;
 }
 /*advantage*/
 .advantage-list{
@@ -431,8 +436,9 @@ font-style:normal;
 .footer-contact{
     padding-left: 0;
 }
-/* footer "Присоединитесь" */
-.footer-second-discript{
+/* footer "Присоединяйтесь" */
+.footer-second-discript,
+.footer-third-discript{
     font-size: 14px;
     line-height: 1.17;
     font-weight: 700;
@@ -446,6 +452,54 @@ font-style:normal;
 }
 .footer-smm-link:hover{
     background-color: var(--button-active);
+}
+
+.button-subscribe{
+    appearance: none;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 29px;
+    padding-right: 29px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.89;
+    letter-spacing: 0.06em;
+    color: var(--main-bg-color);
+    background-color: var(--accent-text-color);
+    border: none;
+
+    border-radius: 4px;
+}
+.button-subscribe:hover,
+.button-subscribe:focus {
+  background-color: #1976d2;
+}
+.button-subscribe svg{
+    margin-left: 10px;
+}
+.footer-input{
+    width: 358px;
+    /* height: 50px; */
+    padding: 15px 16px 16px 15px;
+
+    margin-right: 12px;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.25;
+
+    color: var(--main-bg-color);
+
+    border-color: hsla(0, 0%, 100%, 0.3);
+
 }
 /* modal window */
 .backdrope{
@@ -463,6 +517,7 @@ font-style:normal;
     pointer-events: none;
 }
 .modal{
+    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -470,6 +525,7 @@ font-style:normal;
     
     min-width: 528px;
     min-height: 581px;
+    padding: 40px;
 
     background-color: var(--main-bg-color);
     border-radius: 3px;
@@ -495,9 +551,147 @@ font-style:normal;
     justify-content: center;
     align-items: center;
     
-    border: 2px solid var(--main-text-color);
+    border: 1px solid rgb(224, 217, 217);
     border-radius: 50%;
 }
+.modal-title{
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+
+    color: var(--title-text-color);
+}
+.form-field{
+    position: relative;
+    margin-bottom: 28px;
+    margin-top: 0;
+}
+.heroes-form-label{
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    transform: translateY(-50%);
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+}
+.heroes-form-input{
+    width: 100%;
+    font-size: 16px;
+    
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    border-width: 1px;
+    border-color: var(--main-text-color);
+    border-radius: 4px;
+
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.heroes-form-input:focus + .heroes-form-label,
+.heroes-form-input:not(:placeholder-shown) + .heroes-form-label{
+    color: var(--accent-text-color);
+    fill: var(--accent-text-color);
+    top: -50%;
+    left: 42px;
+    transform: translateY(50%);
+}
+.icon-modalform{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+}
+.heroes-form-input:focus ~ .icon-modalform{
+    fill: var(--accent-text-color);
+}
+.form-field-textarea{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.form-field-textarea .heroes-form-comment{
+    display: block;
+    resize: none;
+    width: 100%;
+    height: 120px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border-radius: 4px;
+}
+.heroes-textarea-label{
+    position: absolute;
+    top:-6%;
+    left: 0;
+    transform: translateY(-50%);
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+} 
+.heroes-form-comment:focus-within + .heroes-textarea-label,
+.heroes-form-comment:not(:placeholder-shown) + .heroes-textarea-label{
+    left: 42px;
+    color: var(--accent-text-color);
+}
+.modal-checkbox-input{
+    /* -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;  */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.checkbox-label{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.checkbox-icon{
+    display: inline-block;
+    margin-right: 7px;
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid var(--title-text-color);
+    border-radius: 3px;
+}
+.modal-checkbox-input:checked + .checkbox-icon{
+    background-color:var(--accent-text-color);
+    background-image: url(../images/check-icon.svg#check-icon);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-origin: content-box;
+    border: transparent;
+}
+.heroes-modalform .form-btn-container{
+    text-align: center;
+}
+/* heroes-form-comment */
 /*PAGE Portfolio*/
 .portfolio-filtr{
 display: flex;
